@@ -1,0 +1,129 @@
+/* Tailwind base directives — these inject Tailwind's base reset, component classes, and utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Global Base Styles
+   ============================================================ */
+@layer base {
+  /* Set the default background and text color for the whole page */
+  html {
+    /* Smooth scrolling when clicking nav anchor links */
+    scroll-behavior: smooth;
+    background-color: #0d1117;
+    color: #e6edf3;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar styling to match the dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d1117;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2dd4bf;
+  }
+}
+
+/* ============================================================
+   Reusable Component Classes
+   Using @layer components so Tailwind can purge unused ones
+   ============================================================ */
+@layer components {
+  /* Section wrapper — consistent vertical padding and max-width */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
+  }
+
+  /* Section heading with a teal underline accent */
+  .section-heading {
+    @apply text-3xl font-bold text-text-primary mb-12 text-center relative;
+  }
+  .section-heading::after {
+    content: '';
+    @apply absolute left-1/2 -translate-x-1/2 -bottom-3 w-16 h-0.5 bg-teal;
+  }
+
+  /* Teal accent button (primary CTA) */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-teal text-bg font-semibold rounded-lg
+           hover:bg-teal-dim transition-all duration-200 hover:scale-105 focus:outline-none
+           focus:ring-2 focus:ring-teal focus:ring-offset-2 focus:ring-offset-bg;
+  }
+
+  /* Ghost button (outlined) */
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-6 py-3 border border-teal text-teal font-semibold rounded-lg
+           hover:bg-teal hover:text-bg transition-all duration-200 hover:scale-105 focus:outline-none
+           focus:ring-2 focus:ring-teal focus:ring-offset-2 focus:ring-offset-bg;
+  }
+
+  /* Dark surface card */
+  .card {
+    @apply bg-bg-surface border border-bg-border rounded-xl p-6
+           hover:border-teal hover:shadow-teal-glow transition-all duration-300;
+  }
+
+  /* Small tech/skill badge */
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-mono font-medium text-teal
+           bg-teal/10 border border-teal/20 rounded-full;
+  }
+}
+
+/* ============================================================
+   Scroll-reveal animation
+   Elements start invisible; the useIntersection hook adds
+   the .visible class when they enter the viewport.
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide in from the left (used for timeline entries on left side) */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide in from the right (used for timeline entries on right side) */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered child delay — used for skill badges and project cards */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
