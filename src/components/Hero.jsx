@@ -109,7 +109,12 @@ function NeuralCanvas() {
 
 // ---- Main Hero component ----
 export default function Hero() {
-  // Smooth scroll to the projects section when "View My Work" is clicked
+  // Smooth scroll to the experience section
+  const scrollToExperience = () => {
+    document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Smooth scroll to the projects section
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -151,20 +156,27 @@ export default function Hero() {
         </p>
 
         {/* Role */}
-        <h2 className="text-xl sm:text-2xl font-medium text-teal mb-6">
+        <h2 className="text-xl sm:text-2xl font-medium text-teal mb-2">
           Data &amp; AI Engineer
         </h2>
 
-        {/* Tagline — experience + focus areas */}
-        <p className="text-text-muted text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          <span className="text-text-primary font-medium">5+ years</span> building across firmware, robotics, and AI —
-          now focused on{' '}
-          <span className="text-teal">Computer Vision</span>,{' '}
-          <span className="text-teal">Data Engineering</span>, and{' '}
-          <span className="text-teal">intelligent systems</span>.
+        {/* Consultant badge — communicates company context without implying freelance/part-time.
+            Shri is a full-time employee at EnablerMinds, a consulting firm. */}
+        <p className="font-mono text-xs text-teal/70 border border-teal/30 rounded-full
+                       inline-block px-3 py-1 mb-6 tracking-wide">
+          Consultant · EnablerMinds GmbH
         </p>
 
-        {/* CTA buttons */}
+        {/* Tagline — breadth of background + current production-systems focus */}
+        <p className="text-text-muted text-base sm:text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+          <span className="text-text-primary font-medium">5+ years</span> across firmware, robotics &amp; AI —
+          now focused on building{' '}
+          <span className="text-teal">scalable, production-ready</span> Data &amp; AI systems
+          for client engagements and{' '}
+          <span className="text-teal">in-house AI initiatives</span>.
+        </p>
+
+        {/* CTA buttons — three options to guide different visitor intents */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {/* Request CV — opens a pre-filled email */}
           <a
@@ -175,10 +187,16 @@ export default function Hero() {
             Request CV
           </a>
 
-          {/* View My Work — smooth scrolls to Projects section */}
+          {/* View Experience — smooth scrolls to Work Experience section */}
+          <button onClick={scrollToExperience} className="btn-ghost">
+            <FaRegEye size={16} />
+            View Experience
+          </button>
+
+          {/* View Projects — smooth scrolls to Projects section */}
           <button onClick={scrollToProjects} className="btn-ghost">
             <FaRegEye size={16} />
-            View My Work
+            View Projects
           </button>
         </div>
       </div>

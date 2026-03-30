@@ -23,5 +23,16 @@ export const articles = [
     date: "April 2025",
     readingTime: "8 min read",
   },
+  {
+    // Written for EnablerMinds on metadata-driven ingestion architecture
+    title: "Metadata-Driven Ingestion Pipelines — and Why Your Lakehouse Needs It",
+    description:
+      "A practitioner's guide to scalable, low-touch data onboarding using metadata-driven architecture on modern lakehouses — covering design patterns, Delta Lake integration, and real-world trade-offs.",
+    image: null, // No image — component will render a neutral placeholder
+    url: "https://www.enablerminds.com/post/metadata-driven-ingestion-pipelines-and-why-your-lakehouse-needs-it",
+    platform: "EnablerMinds Blog",
+    date: "2025",
+    readingTime: "4 min read",
+  },
   // Add more articles here as you write them
 ];

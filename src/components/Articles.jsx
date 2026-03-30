@@ -16,7 +16,8 @@ import { articles } from '../data/articles.js';
 function ArticleImagePlaceholder() {
   return (
     <div className="w-full h-full min-h-[120px] bg-bg-border/30 rounded-lg flex items-center justify-center">
-      <SiMedium size={32} className="text-teal/30" />
+      {/* Generic document icon so it works for any platform */}
+      <HiOutlineExternalLink size={32} className="text-teal/30" />
     </div>
   );
 }
@@ -73,7 +74,7 @@ export default function Articles() {
                 {article.description}
               </p>
 
-              {/* Read button */}
+              {/* Read button — uses Medium icon for Medium articles, generic link otherwise */}
               <div>
                 <a
                   href={article.url}
@@ -82,7 +83,9 @@ export default function Articles() {
                   className="btn-ghost text-sm py-2 px-4 inline-flex"
                   aria-label={`Read ${article.title} on ${article.platform}`}
                 >
-                  <SiMedium size={15} />
+                  {article.platform === 'Medium'
+                    ? <SiMedium size={15} />
+                    : <HiOutlineExternalLink size={15} />}
                   Read on {article.platform}
                   <HiOutlineExternalLink size={13} className="opacity-60" />
                 </a>

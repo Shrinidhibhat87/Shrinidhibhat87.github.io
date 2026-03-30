@@ -11,12 +11,12 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 
 // Bio bullet points — edit this array to update the About Me text.
-// Each entry is one paragraph / bullet.
+// Each entry is one paragraph. Content sourced from references/resume.tex (updated March 2026).
 const BIO_POINTS = [
-  "I'm Shrinidhi — most people call me Shri. I work as a Data and AI Engineer at EnablerMinds GmbH, where I'm deployed as an external consultant within client teams, delivering end-to-end Data and AI solutions using Databricks, Azure Data Factory, dbt, and LangGraph.",
-  "With 5+ years of experience spanning Embedded Firmware, Robotics, and AI research, I bring a rare full-stack perspective — from hardware-level C++ to production-grade machine learning pipelines.",
-  "My research background includes Computer Vision (semantic segmentation, 3D object detection, vision transformers) and Robotics (ROS2, SLAM, point cloud processing). I hold an M.Sc. in Robotic Systems Engineering from RWTH Aachen University.",
-  "I've lived and worked in Germany since 2021, collaborating with teams at BMW, Bosch Center for AI, and Forschungszentrum Jülich. I speak fluent English and conversational German (B1) — enough to hold a meeting, navigate daily life, and enjoy small talk over coffee.",
+  "I'm Shrinidhi — most people call me Shri. I'm a Data & AI Engineer at EnablerMinds GmbH, a consulting firm, where I deliver production ML/CV systems and data platforms for client engagements. Think end-to-end: ingestion pipelines, query optimisation, GenAI POCs, and Dev→Prod automation — all the way to stakeholder sign-off.",
+  "With 5+ years spanning Embedded Firmware (Western Digital, Aptiv), Robotics & Perception (Bosch Center for AI, ROS2/SLAM), and Computer Vision research (BMW Autonomous Driving, Forschungszentrum Jülich), I bring a full-stack engineering perspective that goes well below the Python layer.",
+  "I hold an M.Sc. in Robotic Systems Engineering from RWTH Aachen University. My thesis at BMW's Autonomous Driving Campus achieved 70%+ bandwidth reduction in semantic segmentation pipelines using vision transformers — work that bridges research rigour with production constraints.",
+  "I've lived and worked in Germany since 2021, collaborating with international teams across industry and research. I speak fluent English and conversational German (B1) — enough to run a client meeting, read technical docs, and hold my own at the coffee machine.",
   "Outside of work: football ⚽, badminton 🏸, hiking ⛰️, via ferrata 🧗, and reading 📖.",
 ];
 
@@ -73,8 +73,8 @@ export default function About() {
             </p>
           ))}
 
-          {/* Social icon buttons */}
-          <div className="flex gap-4 pt-4">
+          {/* Social icon buttons — centered so they sit symmetrically under the bio text */}
+          <div className="flex gap-4 pt-4 justify-center">
             {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
               <a
                 key={label}
