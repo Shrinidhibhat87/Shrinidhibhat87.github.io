@@ -33,8 +33,9 @@ export default function Education() {
                 <p className="text-teal text-sm mt-0.5">
                   {edu.institution}
                 </p>
+                {/* Year intentionally not shown — kept in data/education.js for reference only */}
                 <p className="text-text-muted text-sm">
-                  {edu.location} &nbsp;·&nbsp; {edu.year}
+                  {edu.location}
                 </p>
               </div>
             </div>
