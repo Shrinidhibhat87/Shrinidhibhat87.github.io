@@ -10,27 +10,27 @@
 export const skillCategories = [
   {
     category: "Programming Languages",
-    skills: ["Python", "C++", "JavaScript"],
+    skills: ["Python", "C++", "C", "SQL", "Bash", "JavaScript"],
   },
   {
     category: "ML / Computer Vision",
-    skills: ["PyTorch", "HuggingFace", "OpenCV", "scikit-learn", "NumPy", "Matplotlib"],
+    skills: ["PyTorch", "HuggingFace", "OpenCV", "scikit-learn", "NumPy", "Matplotlib", "Segmentation"],
   },
   {
     category: "AI & Agents",
-    skills: ["LangGraph", "Vision Transformers", "SAM", "GLIP", "VAE", "Mask2Former", "VLMs", "3DETR"],
+    skills: ["LangGraph", "AWS Bedrock", "FAISS", "OpenRouter", "Vision Transformers", "SAM", "GLIP", "VAE", "Mask2Former", "VLMs", "LLaVA", "3DETR"],
   },
   {
     category: "Data Engineering",
-    skills: ["Databricks", "Azure Data Factory", "dbt", "Apache Spark", "Delta Lake", "SQL"],
+    skills: ["Databricks", "Delta Lake", "Azure Data Factory", "Confluent Kafka", "Apache Kafka", "Apache Spark", "Metadata-driven Ingestion", "PostgreSQL"],
   },
   {
     category: "MLOps",
-    skills: ["Weights & Biases", "Tensorboard", "ONNXRuntime", "TVM"],
+    skills: ["Weights & Biases", "TensorBoard", "Prometheus", "Grafana", "ONNXRuntime", "TVM"],
   },
   {
-    category: "Orchestration & Infrastructure",
-    skills: ["Kubernetes", "Docker", "GitHub Actions", "CI/CD"],
+    category: "Backend & Infrastructure",
+    skills: ["FastAPI", "REST API", "Docker", "Docker Compose", "GitHub Actions", "CI/CD", "Linux"],
   },
   {
     category: "Robotics",
@@ -38,6 +38,6 @@ export const skillCategories = [
   },
   {
     category: "Tools & Platforms",
-    skills: ["Git", "Linux", "Hydra", "SQLite", "LiberTEM"],
+    skills: ["Git", "Hydra", "SQLite", "Gradio", "LiberTEM"],
   },
 ];

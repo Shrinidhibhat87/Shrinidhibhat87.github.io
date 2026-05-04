@@ -18,14 +18,14 @@ export const projects = [
   {
     title: "Amenity Detection and Description System",
     description:
-      "End-to-end VLM pipeline — object detection, structured storage, and natural-language text generation — deployed as a web application.",
+      "Production-grade VLM system for detecting amenities in images, generating structured descriptions, and serving results through a FastAPI backend with an interactive Gradio UI.",
     image: null, // No image available; placeholder will be shown
     github: "https://github.com/Shrinidhibhat87/amenity_detector",
-    techStack: ["Python", "VLM", "SQLite", "CSV", "Hydra", "Web App"],
+    techStack: ["Python", "FastAPI", "VLM", "OpenRouter", "PostgreSQL", "Gradio", "Docker Compose", "Prometheus", "Grafana", "CI"],
     points: [
-      "Built an end-to-end pipeline combining a Vision-Language Model for detection with structured storage (SQLite/CSV).",
-      "Used Hydra for clean, config-driven architecture — easy to swap models or storage backends without code changes.",
-      "Deployed the full pipeline as an accessible web application.",
+      "Built a multi-model VLM routing pipeline for amenity detection and natural-language description generation.",
+      "Designed the backend around FastAPI, PostgreSQL persistence, and Docker Compose orchestration for reproducible local deployment.",
+      "Added CI and Prometheus/Grafana observability so service health and model pipeline behavior can be monitored.",
     ],
   },
   {
