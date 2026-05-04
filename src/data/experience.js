@@ -15,17 +15,17 @@
 
 export const experiences = [
   {
-    title: "Data and AI Engineer (External Consultant)",
+    title: "Data and AI Engineer",
     company: "EnablerMinds GmbH",
-    location: "Germany",
+    location: "Germany (Remote)",
     period: "07/2025 – Present",
-    topic: "Deployed as an external consultant within client teams to deliver Data and AI solutions",
-    techStack: ["Python", "Databricks", "Azure Data Factory", "dbt", "Apache Spark", "Delta Lake", "Kubernetes", "LangGraph"],
+    topic: "Forward-deployed data and AI engineering for client production workloads",
+    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "CI/CD"],
     points: [
-      "Working as an external consultant embedded within client teams, translating business requirements into end-to-end Data and AI solutions.",
-      "Building scalable data engineering pipelines using Databricks and Azure Data Factory across client environments.",
-      "Developing AI-powered solutions integrating large language models and agentic workflows with LangGraph.",
-      "Designing and maintaining data transformation layers with dbt on Delta Lake architecture.",
+      "Designed and integrated a Confluent Kafka streaming module for dynamic pricing and downstream AI workloads.",
+      "Architected REST/HTTP + JWT ingestion via Key Vault, landing bi-weekly SQL dumps into Databricks Delta with reusable metadata-driven onboarding.",
+      "Built production query optimization pipelines that ran 3.5x faster and automated Dev/UAT/Prod promotion, cutting compute cost by about 90%.",
+      "Contributed to a GenAI POC with FAISS semantic search, SQLite structured queries, and a LangGraph agent deployed on AWS Bedrock.",
     ],
   },
   {
