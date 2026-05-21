@@ -18,14 +18,15 @@ export const projects = [
   {
     title: "Amenity Detection and Description System",
     description:
-      "Production-grade VLM system for detecting amenities in images, generating structured descriptions, and serving results through a FastAPI backend with an interactive Gradio UI.",
+      "Production-style AI property platform that detects amenities from photos, supports human review, generates listing descriptions, and serves searchable public listings.",
     image: null, // No image available; placeholder will be shown
     github: "https://github.com/Shrinidhibhat87/amenity_detector",
-    techStack: ["Python", "FastAPI", "VLM", "OpenRouter", "PostgreSQL", "Gradio", "Docker Compose", "Prometheus", "Grafana", "CI"],
+    techStack: ["Python", "FastAPI", "Next.js", "TypeScript", "VLM", "OpenRouter", "PostgreSQL", "pgvector", "Docker Compose", "Prometheus", "Grafana", "CI"],
     points: [
-      "Built a multi-model VLM routing pipeline for amenity detection and natural-language description generation.",
-      "Designed the backend around FastAPI, PostgreSQL persistence, and Docker Compose orchestration for reproducible local deployment.",
-      "Added CI and Prometheus/Grafana observability so service health and model pipeline behavior can be monitored.",
+      "Built a multi-model VLM pipeline for room-level amenity detection, editable review, alt text, captions, and listing description generation.",
+      "Designed a FastAPI + PostgreSQL backend with pgvector/FTS hybrid search and a strict Next.js TypeScript frontend over HTTP APIs.",
+      "Added SEO and agent-facing surfaces including server-rendered pages, JSON-LD, sitemap, robots.txt, llms.txt, and JSONL feed endpoints.",
+      "Shipped Docker Compose orchestration, Alembic migrations, structured logs, Prometheus/Grafana observability, and GitHub Actions CI.",
     ],
   },
   {
