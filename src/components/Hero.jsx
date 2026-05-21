@@ -164,7 +164,7 @@ export default function Hero() {
             Shri is a full-time employee at EnablerMinds, a consulting firm. */}
         <p className="font-mono text-xs text-teal/70 border border-teal/30 rounded-full
                        inline-block px-3 py-1 mb-6 tracking-wide">
-          Consultant · EnablerMinds GmbH
+          Consultant · EnablerMinds GmbH (startup)
         </p>
 
         {/* Tagline — breadth of background + current production-systems focus */}
@@ -172,8 +172,8 @@ export default function Hero() {
           <span className="text-text-primary font-medium">5+ years</span> across firmware, robotics &amp; AI —
           now focused on building{' '}
           <span className="text-teal">scalable, production-ready</span> Data &amp; AI systems
-          for client engagements and{' '}
-          <span className="text-teal">in-house AI initiatives</span>.
+          for client engagements and <span className="text-teal">startup-speed</span> AI initiatives
+          with strong ownership.
         </p>
 
         {/* CTA buttons — three options to guide different visitor intents */}

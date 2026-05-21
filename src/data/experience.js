@@ -16,16 +16,17 @@
 export const experiences = [
   {
     title: "Data and AI Engineer",
-    company: "EnablerMinds GmbH",
+    company: "EnablerMinds GmbH (consulting startup)",
     location: "Germany (Remote)",
     period: "07/2025 – Present",
-    topic: "Forward-deployed data and AI engineering for client production workloads",
-    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "CI/CD"],
+    topic: "Data and AI engineering for client production workloads and internal PoCs",
+    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "PostgreSQL", "pgvector", "CI/CD"],
     points: [
       "Designed and integrated a Confluent Kafka streaming module for dynamic pricing and downstream AI workloads.",
       "Architected REST/HTTP + JWT ingestion via Key Vault, landing bi-weekly SQL dumps into Databricks Delta with reusable metadata-driven onboarding.",
       "Built production query optimization pipelines that ran 3.5x faster and automated Dev/UAT/Prod promotion, cutting compute cost by about 90%.",
       "Contributed to a GenAI POC with FAISS semantic search, SQLite structured queries, and a LangGraph agent deployed on AWS Bedrock.",
+      "Built an AI commerce catalog PoC with hybrid pgvector search, LLM intent extraction, grounded SEO/GEO content generation, and agentic shopping flows.",
     ],
   },
   {
