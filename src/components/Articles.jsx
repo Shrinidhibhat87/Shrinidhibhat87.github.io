@@ -1,7 +1,7 @@
 // ============================================================
 // Articles — Published articles / blog posts
 // ============================================================
-// Horizontal card layout: image left, text right.
+// Vertical card layout: full-width banner image on top, text below.
 // "Read on Medium" button opens the article in a new tab.
 // Data is imported from src/data/articles.js — edit there.
 // ============================================================
@@ -27,24 +27,35 @@ export default function Articles() {
 
   if (articles.length === 0) return null;
 
+  // Sort newest-first by sortDate (ISO string sorts correctly). Copy first so
+  // we don't mutate the imported array.
+  const sortedArticles = [...articles].sort((a, b) =>
+    (b.sortDate || '').localeCompare(a.sortDate || '')
+  );
+
   return (
     <div className="section-container">
       <h2 className="section-heading">Articles</h2>
 
-      <div ref={containerRef} className="space-y-6">
-        {articles.map((article, index) => (
+      <div ref={containerRef} className="space-y-4">
+        {sortedArticles.map((article, index) => (
           <div
             key={article.title}
-            className="reveal card flex flex-col sm:flex-row gap-6 items-start"
+            // p-4 overrides the global .card p-6 to make article frames ~25% smaller
+            className="reveal card !p-4 flex flex-col gap-3"
             style={{ transitionDelay: `${index * 0.15}s` }}
           >
-            {/* Article image */}
-            <div className="w-full sm:w-40 shrink-0">
+            {/* Article image — compact full-width banner on top of the card.
+                Fixed 11:2 (5.5:1) ratio matches the padded diagram canvases so the
+                wide diagrams fill the banner edge to edge and every card's image is
+                exactly the same size. object-contain never crops; padded background
+                blends into the card surface colour. */}
+            <div className="w-full">
               {article.image ? (
                 <img
                   src={article.image}
                   alt={`${article.title} cover`}
-                  className="w-full h-28 sm:h-full object-cover rounded-lg"
+                  className="w-full aspect-[11/2] object-contain rounded-lg bg-bg-surface"
                   loading="lazy"
                 />
               ) : (
