@@ -9,6 +9,7 @@
 
 import { useIntersectionMultiple } from '../hooks/useIntersection.js';
 import { TbCertificate } from 'react-icons/tb';
+import { HiOutlineExternalLink } from 'react-icons/hi';
 import { certifications } from '../data/certifications.js';
 
 export default function Certifications() {
@@ -46,6 +47,20 @@ export default function Certifications() {
               </h3>
               <p className="text-teal text-sm">{cert.issuer}</p>
               <p className="text-text-muted text-xs font-mono mt-0.5">{cert.year}</p>
+
+              {/* Credential link — only rendered when credentialUrl is set */}
+              {cert.credentialUrl && (
+                <a
+                  href={cert.credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-teal text-xs font-medium mt-2 hover:underline"
+                  aria-label={`View credential for ${cert.name}`}
+                >
+                  View credential
+                  <HiOutlineExternalLink size={12} />
+                </a>
+              )}
             </div>
           </div>
         ))}

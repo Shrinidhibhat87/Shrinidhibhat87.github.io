@@ -8,6 +8,7 @@
 //   year     - Year achieved (string)
 //   status   - "achieved" | "in-progress"  (in-progress items are hidden from the site)
 //   badgeColor - Tailwind bg color class for the badge accent (optional)
+//   credentialUrl - (optional) link to the public credential; renders a "View credential" link
 // ============================================================
 
 export const certifications = [
@@ -16,6 +17,7 @@ export const certifications = [
     issuer: "Databricks",
     year: "2025",
     status: "achieved",
+    credentialUrl: "https://credentials.databricks.com/4757366d-0a70-4db5-a95c-2b62c625d5f5",
   },
   // Add future certifications below when earned:
   // {
