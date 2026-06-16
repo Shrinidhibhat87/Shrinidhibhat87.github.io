@@ -20,13 +20,14 @@ export const experiences = [
     location: "Germany (Remote)",
     period: "07/2025 – Present",
     topic: "Data and AI engineering for client production workloads and internal PoCs",
-    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "PostgreSQL", "pgvector", "CI/CD"],
+    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "PostgreSQL", "pgvector", "Kubernetes", "Helm", "Langfuse", "Prometheus", "Grafana", "CI/CD"],
     points: [
+      "Built an end-to-end GenAI catalog search system with LLM query decomposition, hybrid pgvector and SQL filter retrieval, and cross-encoder reranking. Shipped as a containerized multi-service architecture scaling on Kubernetes.",
+      "Built a grounded SEO and GEO pipeline with an autonomous shopping agent (OpenAI Agents SDK) and an ACP protocol adapter, adding per-SKU AI-readiness scoring that makes the catalog discoverable by AI agents rather than classical crawlers.",
       "Designed and integrated a Confluent Kafka streaming module for dynamic pricing and downstream AI workloads.",
       "Architected REST/HTTP + JWT ingestion via Key Vault, landing bi-weekly SQL dumps into Databricks Delta with reusable metadata-driven onboarding.",
       "Built production query optimization pipelines that ran 3.5x faster and automated Dev/UAT/Prod promotion, cutting compute cost by about 90%.",
       "Contributed to a GenAI POC with FAISS semantic search, SQLite structured queries, and a LangGraph agent deployed on AWS Bedrock.",
-      "Built an AI commerce catalog PoC with hybrid pgvector search, LLM intent extraction, grounded SEO/GEO content generation, and agentic shopping flows.",
     ],
   },
   {
