@@ -14,7 +14,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 // Each entry is one paragraph. Content sourced from references/resume.tex.
 const BIO_POINTS = [
   "I'm Shrinidhi, most people call me Shri. I'm a Data & AI Engineer at EnablerMinds GmbH, a consulting startup where I build production-ready data and AI systems for client engagements and internal PoCs.",
-  "My work spans streaming pipelines, Databricks, model-serving APIs, CI/CD, observability, GenAI agents, and stakeholder-facing delivery.",
+  "My work spans streaming pipelines, Databricks, model-serving APIs, CI/CD, observability, agentic AI solutions, and stakeholder-facing delivery.",
   "I enjoy startup and fast-paced environments where engineers take ownership from problem framing to production delivery.",
   "I collaborate with international teams in English and bring basic conversational German.",
   "Outside of work, I like football, badminton, hiking, via ferrata, and reading.",

@@ -18,6 +18,18 @@
 
 export const articles = [
   {
+    // Hackathon retrospective — team process and decision-making behind the winning build
+    title: "AI x Energy Hackathon: Our Playbook for Winning",
+    description:
+      "How a team of four strangers — two AI engineers, a sales ops lead, and a product engineer — came together, scoped fast, handled conflict, and won a competitive AI hackathon in under 4 hours.",
+    image: "/assets/hackathon-win.jpg",
+    url: "https://medium.com/@shrinidhi.bhat/ai-x-energy-hackathon-our-playbook-for-winnning-23ba7330e698",
+    platform: "Medium",
+    date: "June 25, 2026",
+    sortDate: "2026-06-25",
+    readingTime: "5 min read",
+  },
+  {
     // Latest article — Delta table optimization on a metadata-driven lakehouse
     title: "Optimization of Delta Tables: How it Saves Costs",
     description:
