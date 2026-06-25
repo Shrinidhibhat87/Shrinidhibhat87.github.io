@@ -20,7 +20,7 @@ export const projects = [
     title: "Never Ghosted — AI Sales Assistant",
     description:
       "Hackathon-winning agentic sales assistant for solar installers. Reads a deal's quote, customer profile, and signals, then writes a grounded multi-channel closing strategy — explaining the why behind every recommendation.",
-    image: null, // Replace with hackathon screenshot when available
+    image: "/assets/project-never-ghosted.png",
     github: "https://github.com/Shrinidhibhat87/reonic-never-ghosted",
     techStack: ["TypeScript", "VoltAgent", "Next.js", "FastAPI", "Python", "PostgreSQL", "OpenAI", "Docker Compose"],
     points: [

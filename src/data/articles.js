@@ -22,7 +22,7 @@ export const articles = [
     title: "AI x Energy Hackathon: Our Playbook for Winning",
     description:
       "How a team of four strangers — two AI engineers, a sales ops lead, and a product engineer — came together, scoped fast, handled conflict, and won a competitive AI hackathon in under 4 hours.",
-    image: null, // Replace with blog cover image when available
+    image: "/assets/hackathon-win.jpg",
     url: "https://medium.com/@shrinidhi.bhat/ai-x-energy-hackathon-our-playbook-for-winnning-23ba7330e698",
     platform: "Medium",
     date: "June 25, 2026",
