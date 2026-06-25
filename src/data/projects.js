@@ -16,6 +16,21 @@
 
 export const projects = [
   {
+    // 🏆 1st place — AI x Energy Hackathon (Berlin, June 2026)
+    title: "Never Ghosted — AI Sales Assistant",
+    description:
+      "Hackathon-winning agentic sales assistant for solar installers. Reads a deal's quote, customer profile, and signals, then writes a grounded multi-channel closing strategy — explaining the why behind every recommendation.",
+    image: null, // Replace with hackathon screenshot when available
+    github: "https://github.com/Shrinidhibhat87/reonic-never-ghosted",
+    techStack: ["TypeScript", "VoltAgent", "Next.js", "FastAPI", "Python", "PostgreSQL", "OpenAI", "Docker Compose"],
+    points: [
+      "Won 1st place overall at an AI x Energy Hackathon (70+ participants, 4 tracks) — built and demoed a working product in under 4 hours.",
+      "Designed a 5-step agentic workflow: context validation → knowledgebase load → deterministic scoring → LLM evaluation → LLM strategy synthesis.",
+      "Grounded recommendations in real customer reviews (Trustpilot/Google) scraped and embedded into a JSON knowledgebase.",
+      "Shipped a Next.js frontend, FastAPI + Postgres backend, and a VoltAgent TS service with graceful deterministic fallback — all dockerised.",
+    ],
+  },
+  {
     title: "Amenity Detection and Description System",
     description:
       "Production-style AI property platform that detects amenities from photos, supports human review, generates listing descriptions, and serves searchable public listings.",
