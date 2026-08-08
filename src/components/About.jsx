@@ -7,8 +7,6 @@
 // ============================================================
 
 import { useIntersection } from '../hooks/useIntersection.js';
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
 
 // Bio bullet points — edit this array to update the About Me text.
 // Each entry is one paragraph. Content sourced from references/resume.tex.
@@ -20,24 +18,7 @@ const BIO_POINTS = [
   "Outside of work, I like football, badminton, hiking, via ferrata, and reading.",
 ];
 
-// Social / contact links — update hrefs as needed
-const SOCIAL_LINKS = [
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/shrinidhi-bhat-9635a615a/',
-    icon: FaLinkedin,
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/Shrinidhibhat87',
-    icon: FaGithub,
-  },
-  {
-    label: 'Email',
-    href: 'mailto:bhatshrinidhi97@gmail.com',
-    icon: HiOutlineMail,
-  },
-];
+// NOTE: the LinkedIn / GitHub links now live in the Hero section (src/components/Hero.jsx).
 
 export default function About() {
   // Animate the whole section in when it enters the viewport
@@ -47,10 +28,12 @@ export default function About() {
     <div className="section-container">
       <h2 className="section-heading">About Me</h2>
 
-      {/* Two-column grid on md+, single column on mobile */}
+      {/* Two-column grid on md+, single column on mobile.
+          items-start => photo and text share the same top edge, instead of the
+          photo floating in the vertical middle of the text block. */}
       <div
         ref={sectionRef}
-        className="reveal grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 lg:gap-16 items-center"
+        className="reveal grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 lg:gap-14 items-start max-w-5xl mx-auto"
       >
         {/* ---- Left: Photo ---- */}
         <div className="flex justify-center md:justify-start">
@@ -60,7 +43,7 @@ export default function About() {
             <img
               src="/assets/profile.jpg"
               alt="Shrinidhi Bhat eating zapikanka"
-              className="relative w-52 h-64 object-cover rounded-2xl border-2 border-bg-border"
+              className="relative w-56 h-72 object-cover rounded-2xl border-2 border-bg-border"
             />
           </div>
         </div>
@@ -72,22 +55,6 @@ export default function About() {
               {point}
             </p>
           ))}
-
-          {/* Social icon buttons — centered so they sit symmetrically under the bio text */}
-          <div className="flex gap-4 pt-4 justify-center">
-            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-text-muted hover:text-teal transition-colors duration-200"
-              >
-                <Icon size={24} />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </div>

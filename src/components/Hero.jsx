@@ -10,7 +10,22 @@
 import { useEffect, useRef } from 'react';
 import { HiOutlineMail } from 'react-icons/hi';
 import { HiChevronDown } from 'react-icons/hi2';
-import { FaRegEye } from 'react-icons/fa';
+import { FaRegEye, FaLinkedin, FaGithub } from 'react-icons/fa';
+
+// Social profile links shown as buttons under the main CTAs.
+// Edit the hrefs here to point elsewhere.
+const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/shrinidhi-bhat-9635a615a/',
+    icon: FaLinkedin,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/Shrinidhibhat87',
+    icon: FaGithub,
+  },
+];
 
 // ---- Neural network canvas animation ----
 // Draws drifting nodes connected by lines when within proximity.
@@ -198,6 +213,23 @@ export default function Hero() {
             <FaRegEye size={16} />
             View Projects
           </button>
+        </div>
+
+        {/* Social buttons — same ghost-button style as the CTAs above,
+            so the whole block reads as one set of actions */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
+          {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost"
+            >
+              <Icon size={18} />
+              {label}
+            </a>
+          ))}
         </div>
       </div>
 
