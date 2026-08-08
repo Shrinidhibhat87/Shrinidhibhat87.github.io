@@ -1,0 +1,82 @@
+# ============================================================
+# Deploy the portfolio to GitHub Pages
+# ============================================================
+# Runs automatically on every push to `main`, and can also be
+# started by hand from the Actions tab (workflow_dispatch).
+#
+# What it does:
+#   1. Checks out the repo and installs Node
+#   2. Runs `npm run build`, which produces the static site in dist/
+#   3. Uploads dist/ and publishes it to GitHub Pages
+#
+# IMPORTANT — one-time repo setting:
+#   Settings > Pages > Build and deployment > Source must be set to
+#   "GitHub Actions". If it is still set to "Deploy from a branch"
+#   (gh-pages), this workflow will fail at the deploy step and the
+#   currently live site stays untouched.
+# ============================================================
+
+name: Deploy to GitHub Pages
+
+on:
+  # Deploy whenever main moves (i.e. when a PR is merged)
+  push:
+    branches: [main]
+  # Allow a manual run from the Actions tab
+  workflow_dispatch:
+
+# Permissions the GITHUB_TOKEN needs in order to publish to Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one deploy at a time. `cancel-in-progress: false` means a
+# running deploy is allowed to finish rather than being killed
+# half-published by a newer push.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # ---- Build the static site ----
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      # `npm ci` installs exactly what package-lock.json pins,
+      # which keeps CI builds reproducible.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the site
+        run: npm run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Packages dist/ into the artifact that the deploy step expects
+      - name: Upload the built site as a Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  # ---- Publish the built site ----
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
