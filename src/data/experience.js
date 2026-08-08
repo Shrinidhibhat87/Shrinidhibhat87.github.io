@@ -10,24 +10,33 @@
 //   period   - Display date string e.g. "07/2025 – Present"
 //   topic    - One-line description of main focus / project
 //   techStack - Array of technology strings (shown as badges)
-//   points   - Array of bullet point strings describing your work
+//   points   - Array of bullet points describing your work. Each entry is
+//              either a plain string, or an object { label, text } where
+//              `label` renders as a bold teal prefix (e.g. "AI:" / "Data:")
 // ============================================================
 
 export const experiences = [
   {
-    title: "Data and AI Engineer",
+    title: "Data & AI Engineer (Forward Deployed)",
     company: "EnablerMinds GmbH (consulting startup)",
     location: "Germany (Remote)",
     period: "07/2025 – Present",
     topic: "Data and AI engineering for client production workloads and internal PoCs",
-    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Key Vault", "FastAPI", "FAISS", "SQLite", "LangGraph", "AWS Bedrock", "PostgreSQL", "pgvector", "Kubernetes", "Helm", "Langfuse", "Prometheus", "Grafana", "CI/CD"],
+    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Event Hubs", "Azure Key Vault", "Kubernetes", "ACR", "FastAPI", "PostgreSQL", "pgvector", "OpenAI Agents SDK", "Redis/Dragonfly", "Apify", "FAISS", "LangGraph", "AWS Bedrock", "Langfuse", "Grafana", "CI/CD"],
+    // Bullets are grouped: the AI-side work first, then the Data-platform work.
     points: [
-      "Built an end-to-end GenAI catalog search system with LLM query decomposition, hybrid pgvector and SQL filter retrieval, and cross-encoder reranking. Shipped as a containerized multi-service architecture scaling on Kubernetes.",
-      "Built a grounded SEO and GEO pipeline with an autonomous shopping agent (OpenAI Agents SDK) and an ACP protocol adapter, adding per-SKU AI-readiness scoring that makes the catalog discoverable by AI agents rather than classical crawlers.",
-      "Designed and integrated a Confluent Kafka streaming module for dynamic pricing and downstream AI workloads.",
-      "Architected REST/HTTP + JWT ingestion via Key Vault, landing bi-weekly SQL dumps into Databricks Delta with reusable metadata-driven onboarding.",
-      "Built production query optimization pipelines that ran 3.5x faster and automated Dev/UAT/Prod promotion, cutting compute cost by about 90%.",
+      {
+        label: "AI",
+        text: "Agentic Commerce — natural-language catalog search (LLM query decomposition, hybrid pgvector + SQL retrieval, cross-encoder reranking), per-SKU AI search readiness (GEO/SEO), and agentic checkout (OpenAI Agents SDK, ACP).",
+      },
+      "Deployed it as a containerized multi-service system on Azure (ACR → Kubernetes, CI/CD promotion) with Grafana/Langfuse observability and cost/latency tracing.",
+      "AI Enrichment Service: co-architected a Kafka-driven, hexagonal (ports & adapters) service producing evidence-backed product fields; own the Kafka consumer edge, Apify scraping, Redis/Dragonfly caching, and Grafana observability.",
       "Contributed to a GenAI POC with FAISS semantic search, SQLite structured queries, and a LangGraph agent deployed on AWS Bedrock.",
+      {
+        label: "Data",
+        text: "Architected ingestion across heterogeneous sources: event streams (Confluent Kafka, Event Hubs) and token/key-authenticated REST APIs (JWT via Key Vault) into Databricks Delta, with metadata-driven onboarding.",
+      },
+      "Built query optimization production pipelines running 3.5x faster; automated Dev/UAT/Prod code and config promotion, cutting compute cost by about 90%.",
     ],
   },
   {
