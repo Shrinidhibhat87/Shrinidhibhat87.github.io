@@ -24,7 +24,7 @@ export const projects = [
     github: "https://github.com/Shrinidhibhat87/reonic-never-ghosted",
     techStack: ["TypeScript", "VoltAgent", "Next.js", "FastAPI", "Python", "PostgreSQL", "OpenAI", "Docker Compose"],
     points: [
-      "Won 1st place overall at an AI x Energy Hackathon (70+ participants, 4 tracks) — built and demoed a working product in under 4 hours.",
+      "Won 1st place overall at an AI x Energy Hackathon (70+ participants, 4 tracks) — built and demoed a working product in under 18 hours.",
       "Designed a 5-step agentic workflow: context validation → knowledgebase load → deterministic scoring → LLM evaluation → LLM strategy synthesis.",
       "Grounded recommendations in real customer reviews (Trustpilot/Google) scraped and embedded into a JSON knowledgebase.",
       "Shipped a Next.js frontend, FastAPI + Postgres backend, and a VoltAgent TS service with graceful deterministic fallback — all dockerised.",

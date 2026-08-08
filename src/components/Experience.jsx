@@ -71,14 +71,24 @@ function TimelineCard({ exp, index }) {
         {/* Topic / project focus */}
         <p className="text-text-muted text-sm italic mb-3">{exp.topic}</p>
 
-        {/* Bullet points */}
+        {/* Bullet points.
+            A point can either be a plain string, or an object
+            { label, text } — the label is rendered as a bold teal prefix
+            (used e.g. to split "AI:" work from "Data:" work). */}
         <ul className="space-y-1.5 mb-4">
-          {exp.points.map((pt, i) => (
-            <li key={i} className="text-text-muted text-sm flex gap-2">
-              <span className="text-teal mt-1 shrink-0">▸</span>
-              <span>{pt}</span>
-            </li>
-          ))}
+          {exp.points.map((pt, i) => {
+            const label = typeof pt === 'string' ? null : pt.label;
+            const text = typeof pt === 'string' ? pt : pt.text;
+            return (
+              <li key={i} className="text-text-muted text-sm flex gap-2">
+                <span className="text-teal mt-1 shrink-0">▸</span>
+                <span>
+                  {label && <strong className="text-teal font-semibold">{label}: </strong>}
+                  {text}
+                </span>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Tech stack badges */}
