@@ -17,20 +17,22 @@
 
 export const experiences = [
   {
-    title: "Data & AI Engineer (Forward Deployed)",
+    title: "Data & AI Engineer (FDE)",
     company: "EnablerMinds GmbH (consulting startup)",
     location: "Germany (Remote)",
     period: "07/2025 – Present",
     topic: "Data and AI engineering for client production workloads and internal PoCs",
-    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Event Hubs", "Azure Key Vault", "Kubernetes", "ACR", "FastAPI", "PostgreSQL", "pgvector", "OpenAI Agents SDK", "Redis/Dragonfly", "Apify", "FAISS", "LangGraph", "AWS Bedrock", "Langfuse", "Grafana", "CI/CD"],
-    // Bullets are grouped: the AI-side work first, then the Data-platform work.
+    techStack: ["Python", "Databricks", "Delta Lake", "Confluent Kafka", "Azure Event Hubs", "Azure Key Vault", "Cosmos DB", "Brightdata", "Dragonfly", "OpenTelemetry", "FastAPI", "PostgreSQL", "pgvector", "OpenAI Agents SDK", "FAISS", "LangGraph", "AWS Bedrock", "Grafana", "CI/CD"],
+    // Bullets order: AI Enrichment Service first, then AI work, GenAI POC, then Data-platform work.
     points: [
       {
-        label: "AI",
-        text: "Agentic Commerce — natural-language catalog search (LLM query decomposition, hybrid pgvector + SQL retrieval, cross-encoder reranking), per-SKU AI search readiness (GEO/SEO), and agentic checkout (OpenAI Agents SDK, ACP).",
+        label: "AI Enrichment Service",
+        text: "Co-architected and built a deployed Kafka-driven, hexagonal service producing evidence-backed product attributes with confidence scores; owned the rebalance-safe consumer edge and Brightdata, Dragonfly, and Cosmos DB integrations, supporting concurrent jobs, idempotent redelivery, a 1-year audit trail, and E2E OpenTelemetry/Grafana observability.",
       },
-      "Deployed it as a containerized multi-service system on Azure (ACR → Kubernetes, CI/CD promotion) with Grafana/Langfuse observability and cost/latency tracing.",
-      "AI Enrichment Service: co-architected a Kafka-driven, hexagonal (ports & adapters) service producing evidence-backed product fields; own the Kafka consumer edge, Apify scraping, Redis/Dragonfly caching, and Grafana observability.",
+      {
+        label: "AI",
+        text: "Built Agentic Commerce: LLM-parsed NL catalog search (pgvector/SQL + cross-encoder reranking), grounded SEO + SKU-readiness audits, and an OpenAI Agents SDK agent with ACP checkout.",
+      },
       "Contributed to a GenAI POC with FAISS semantic search, SQLite structured queries, and a LangGraph agent deployed on AWS Bedrock.",
       {
         label: "Data",

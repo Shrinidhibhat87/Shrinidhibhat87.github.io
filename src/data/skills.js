@@ -18,15 +18,15 @@ export const skillCategories = [
   },
   {
     category: "AI & Agents",
-    skills: ["LangGraph", "AWS Bedrock", "FAISS", "OpenRouter", "Vision Transformers", "SAM", "GLIP", "VAE", "Mask2Former", "VLMs", "LLaVA", "3DETR"],
+    skills: ["LangGraph", "AWS Bedrock", "FAISS", "OpenRouter", "pydantic-ai", "vLLM", "Ollama", "Presidio", "Vision Transformers", "SAM", "GLIP", "VAE", "Mask2Former", "VLMs", "LLaVA", "3DETR"],
   },
   {
     category: "Data Engineering",
-    skills: ["Databricks", "Delta Lake", "Azure Data Factory", "Confluent Kafka", "Apache Kafka", "Apache Spark", "Metadata-driven Ingestion", "PostgreSQL"],
+    skills: ["Databricks", "Delta Lake", "Azure Data Factory", "Confluent Kafka", "Apache Kafka", "Apache Spark", "Metadata-driven Ingestion", "PostgreSQL", "Cosmos DB", "Brightdata"],
   },
   {
     category: "MLOps",
-    skills: ["Weights & Biases", "TensorBoard", "Prometheus", "Grafana", "ONNXRuntime", "TVM"],
+    skills: ["Weights & Biases", "TensorBoard", "Prometheus", "Grafana", "OpenTelemetry", "ONNXRuntime", "TVM"],
   },
   {
     category: "Backend & Infrastructure",
