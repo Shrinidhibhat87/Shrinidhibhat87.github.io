@@ -16,6 +16,21 @@
 
 export const projects = [
   {
+    // Newest project.
+    title: "Career Copilot — Agentic Job-Search Assistant",
+    description:
+      "Personal job-search agent that discovers postings from ATS boards, hard filters them, scores the survivors against a CV with local or cloud LLMs, and renders a ranked digest. Can run 100% locally, so no data has to leave your machine. It recommends roles and never submits an application.",
+    image: "/assets/project-career-copilot.png",
+    github: "https://github.com/Shrinidhibhat87/career-copilot",
+    techStack: ["Python", "FastAPI", "Next.js", "TypeScript", "pydantic-ai", "vLLM", "Ollama", "OpenRouter", "SQLite", "Presidio", "Docker", "GitHub Actions"],
+    points: [
+      "Designed a hexagonal architecture (JobSource, StateStore, LLMClient, Notifier ports) so a local model, a cloud provider, or a new job board is a swap-in adapter, not a rewrite.",
+      "Built a tool calling discovery agent that finds company ATS boards (Greenhouse, Workable, SmartRecruiters, Personio and more), plus a two stage LLM funnel: cheap triage, then deep CV match.",
+      "Ran models on a 6 GB GTX 1660 Ti with a 4-bit AWQ Qwen3-4B on vLLM in Docker under WSL2, with per-machine profiles for Ollama on Apple Silicon and OpenRouter in the cloud.",
+      "Added a Presidio PII redaction gateway in front of every model call, per-person accounts with their own SQLite database, a Next.js UI, and CI with ruff, mypy and pytest.",
+    ],
+  },
+  {
     // 🏆 1st place — AI x Energy Hackathon (Berlin, June 2026)
     title: "Never Ghosted — AI Sales Assistant",
     description:
